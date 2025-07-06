@@ -3,11 +3,12 @@ from sqlalchemy import create_engine, text
 import pandas as pd
 import joblib
 import numpy as np
+import os
 
 # Crear el blueprint
 recommendations_bp = Blueprint('recommendations', __name__)
 
-MODEL_PATH = r'C:\Users\Jhon\Documents\8vo\Aplicaciones\proyecto\programa\project-root\backend\app\models\svm_recipes_optimized_fast.joblib'
+MODEL_PATH = os.path.join(os.path.dirname(__file__), 'svm_recipes_optimized_fast.joblib')
 DB_URL = 'postgresql://recetas_normalized_user:LGs0KhjIVSgGTYvx3aez1I37YjT9LkNa@dpg-d1ldpd15pdvs73bsasqg-a.ohio-postgres.render.com/recetas_normalized'
 
 try:
