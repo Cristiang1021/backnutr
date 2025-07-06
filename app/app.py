@@ -14,7 +14,7 @@ from app.factory import bcrypt
 app = create_app()
 
 # Configurar CORS
-frontend_url = os.getenv('FRONTEND_URL', 'https://frontnutr.vercel.app/')
+frontend_url = os.getenv('FRONTEND_URL', 'https://frontnutr.vercel.app')
 CORS(app, resources={r"/*": {"origins": frontend_url}})  # Permitir todas las rutas desde el frontend
 CORS(app, resources={r"/archivos/*": {"origins": frontend_url, "methods": ["GET", "POST", "OPTIONS"]}})
 
@@ -25,7 +25,7 @@ app.register_blueprint(recetas_bp, url_prefix='/recetas')
 
 Session(app)
 
-# Crear tablas si no existen y crear usuario admin por defecto
+# Crear tablas si no existen y crear usuario admin por defecto y probar 
 with app.app_context():
     db.create_all()
     # Crear usuario admin por defecto si no existe

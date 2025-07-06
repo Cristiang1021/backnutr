@@ -38,7 +38,7 @@ def create_app():
     app.config['PROPAGATE_EXCEPTIONS'] = True
 
     # Configurar CORS para producción
-    frontend_url = os.getenv('FRONTEND_URL', 'https://frontnutr.vercel.app/')
+    frontend_url = os.getenv('FRONTEND_URL', 'https://frontnutr.vercel.app')
     CORS(app, resources={
         r"/auth/*": {
             "origins": [frontend_url],

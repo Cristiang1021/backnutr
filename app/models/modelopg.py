@@ -112,7 +112,8 @@ def generate_recommendations(model, user_input, num_recommendations=5):
 # ========================
 print("Cargando datos...")
 start_time = time.time()
-data = load_and_prepare_data(r'C:\Users\Jhon\Documents\8vo\Aplicaciones\proyecto\pruebas\modelo postgres\final_recipes_utf8.csv')
+#data = load_and_prepare_data(r'C:\Users\Jhon\Documents\8vo\Aplicaciones\proyecto\pruebas\modelo postgres\final_recipes_utf8.csv')
+data = load_and_prepare_data(r'C:\Users\crist\OneDrive\Desktop\nutricion\nutritechv2\project-root\backend\app\models\final_recipes_utf8.csv')
 print(f"Datos cargados en {time.time() - start_time:.2f} segundos")
 
 # ========================
