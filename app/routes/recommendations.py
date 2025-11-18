@@ -10,7 +10,7 @@ recommendations_bp = Blueprint('recommendations', __name__)
 
 MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'models', 'svm_recipes_optimized_fast.joblib')
 MODEL_PATH = os.path.abspath(MODEL_PATH)
-DB_URL = 'postgresql://recetas_normalized_user:LGs0KhjIVSgGTYvx3aez1I37YjT9LkNa@dpg-d1ldpd15pdvs73bsasqg-a.ohio-postgres.render.com/recetas_normalized'
+DB_URL = 'postgresql://recetas_normalized_nlzo_user:glgJ7CRNl5NvbXQZQQPpOzP5a14N240N@dpg-d4dt2sqdbo4c73fupqd0-a.ohio-postgres.render.com/recetas_normalized_nlzo'
 
 try:
     model = joblib.load(MODEL_PATH)

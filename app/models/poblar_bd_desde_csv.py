@@ -1,6 +1,7 @@
 import pandas as pd
 from sqlalchemy import create_engine, text
 import sys
+import os
 
 def poblar_base_de_datos(csv_path, db_connection_str):
     """
@@ -186,11 +187,12 @@ def poblar_base_de_datos(csv_path, db_connection_str):
 
 # --- Bloque principal para ejecutar el script ---
 if __name__ == '__main__':
-    # ¡IMPORTANTE! Reemplaza esta ruta con la ubicación real de tu archivo CSV.
-    # Usa una ruta absoluta para evitar problemas.
-    CSV_FILE_PATH = r'C:\Users\crist\OneDrive\Desktop\nutricion\nutritechv2\project-root\backend\app\models\final_recipes_utf8.csv'
+    # Usar ruta relativa para que funcione tanto localmente como en producción
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    CSV_FILE_PATH = os.path.join(script_dir, 'final_recipes_utf8.csv')
     
     # Cadena de conexión a tu base de datos PostgreSQL
-    DB_CONNECTION_STRING = "postgresql://recetas_normalized_user:LGs0KhjIVSgGTYvx3aez1I37YjT9LkNa@dpg-d1ldpd15pdvs73bsasqg-a.ohio-postgres.render.com/recetas_normalized"
+    # Se puede obtener de la variable de entorno o usar la hardcodeada como fallback
+    DB_CONNECTION_STRING = os.getenv('DATABASE_URL', "postgresql://recetas_normalized_nlzo_user:glgJ7CRNl5NvbXQZQQPpOzP5a14N240N@dpg-d4dt2sqdbo4c73fupqd0-a.ohio-postgres.render.com/recetas_normalized_nlzo")
 
     poblar_base_de_datos(CSV_FILE_PATH, DB_CONNECTION_STRING)

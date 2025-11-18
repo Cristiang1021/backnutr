@@ -19,7 +19,7 @@ def create_app():
 
     # Configuración de base de datos
     #database_url = os.getenv('DATABASE_URL', 'postgresql://postgres:12345@localhost:5432/recetas_normalized')
-    database_url = os.getenv('DATABASE_URL', 'postgresql://recetas_normalized_user:LGs0KhjIVSgGTYvx3aez1I37YjT9LkNa@dpg-d1ldpd15pdvs73bsasqg-a.ohio-postgres.render.com/recetas_normalized')
+    database_url = os.getenv('DATABASE_URL', 'postgresql://recetas_normalized_nlzo_user:glgJ7CRNl5NvbXQZQQPpOzP5a14N240N@dpg-d4dt2sqdbo4c73fupqd0-a.ohio-postgres.render.com/recetas_normalized_nlzo')
     if database_url.startswith('postgres://'):
         database_url = database_url.replace('postgres://', 'postgresql://', 1)
     

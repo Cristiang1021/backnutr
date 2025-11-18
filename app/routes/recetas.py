@@ -5,7 +5,7 @@ from sqlalchemy.exc import SQLAlchemyError
 recetas_bp = Blueprint('recetas', __name__)
 
 # Configuración de la conexión a PostgreSQL
-DATABASE_URL = 'postgresql://recetas_normalized_user:LGs0KhjIVSgGTYvx3aez1I37YjT9LkNa@dpg-d1ldpd15pdvs73bsasqg-a.ohio-postgres.render.com/recetas_normalized'
+DATABASE_URL = 'postgresql://recetas_normalized_nlzo_user:glgJ7CRNl5NvbXQZQQPpOzP5a14N240N@dpg-d4dt2sqdbo4c73fupqd0-a.ohio-postgres.render.com/recetas_normalized_nlzo'
 engine = create_engine(DATABASE_URL)
 
 # --- CRUD para restricciones_dieteticas ---
